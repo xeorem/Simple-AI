@@ -1,25 +1,27 @@
 
-var viewSpectrumDegrees:int = 90;
+public var viewSpectrumDegrees:int = 90;
 
-var numFeelers:int = 3;
+public var numFeelers:int = 3;
 
-var feelerDistance:float = 10;
-var feelerDirection:float = 0f;
+public var feelerDistance:float = 10;
+public var feelerDirection:float = 0f;
 
-var rayDistances : float[];
+public var rayDistances : float[];
 
 private var feelerDirections:float[];
 private var characterHeight;
 private var characterRadius;
 
-var pilotObject:GameObject;
-var physicalObject:GameObject;
+public var pilotObject:GameObject;
+public var physicalObject:GameObject;
+
+private var stepHeight:float = 0.2; // the maximumm height an object can be before being considered a wall
 
 function Start() 
 {
 	// find the parent (or target) object
 	if(physicalObject == null) physicalObject = this.gameObject;
-	if(pilotObject == null) pilotObject = GameObject.Find(physicalObject.transform.parent.name);
+	if(pilotObject == null) pilotObject = this.gameObject;
 	characterHeight = physicalObject.GetComponent(CharacterController).height;
 	characterRadius = physicalObject.GetComponent(CharacterController).radius;
 
@@ -70,6 +72,6 @@ private function getFeelerDirectionalVector(feelerIndex:int):Vector3
 
 private function getFeelerOrigin()
 {
-	var origin = new Vector3(physicalObject.transform.position.x, physicalObject.transform.position.y + characterHeight, physicalObject.transform.position.z + characterRadius);
+	var origin = new Vector3(physicalObject.transform.position.x, physicalObject.transform.position.y + stepHeight, physicalObject.transform.position.z + characterRadius);
 	return origin;
 }
