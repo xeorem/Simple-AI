@@ -72,6 +72,6 @@ private function getFeelerDirectionalVector(feelerIndex:int):Vector3
 
 private function getFeelerOrigin()
 {
-	var origin = new Vector3(physicalObject.transform.position.x, physicalObject.transform.position.y + stepHeight, physicalObject.transform.position.z + characterRadius);
+	var origin = new Vector3(physicalObject.transform.position.x, physicalObject.transform.position.y + stepHeight, physicalObject.transform.position.z - characterRadius);
 	return origin;
 }
