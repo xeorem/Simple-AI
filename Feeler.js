@@ -51,6 +51,8 @@ function Update ()
 		// cast the ray
 		var hitDetails : RaycastHit;
 		var hit = Physics.Raycast(origin, vectorDirection, hitDetails, feelerDistance);
+		if(hit && (hitDetails.collider.tag == "agent" || hitDetails.collider.tag == "Player")) hit = false;
+		else if(hit) Debug.Log(hitDetails.collider.tag);
 		
 		// draw the ray
 		var color = hit ? Color.red : Color.green;
@@ -72,6 +74,7 @@ private function getFeelerDirectionalVector(feelerIndex:int):Vector3
 
 private function getFeelerOrigin()
 {
-	var origin = new Vector3(physicalObject.transform.position.x, physicalObject.transform.position.y + stepHeight, physicalObject.transform.position.z - characterRadius);
+	var origin = new Vector3(physicalObject.transform.position.x, physicalObject.transform.position.y + stepHeight, physicalObject.transform.position.z);
+	//origin += this.transform.rotation * 6;
 	return origin;
 }
