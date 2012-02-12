@@ -35,7 +35,10 @@ function Update () {
     		dir = otherObj.transform.position - transform.position;
     		angle = Vector3.Angle(transform.forward, dir);
 			
-			var cross : Vector3 = Vector3.Cross(transform.forward, dir);
+			var v1 : Vector2 = new Vector2(dir.z, dir.x);
+			var v2 : Vector2 = new Vector2(transform.forward.z, transform.forward.x);
+			
+			var cross : Vector3 = Vector3.Cross(v2, v1);
 			
 			//if (transform.position.x < otherObj.transform.position.x) {
 			if (cross.z > 0) {
