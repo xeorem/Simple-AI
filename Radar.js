@@ -15,6 +15,15 @@ function Start () {
 
 function Update () {
 	
+	var debugVec1 : Vector3 = new Vector3(Mathf.Sqrt(12.5), 0, (0-Mathf.Sqrt(12.5)));
+	var debugVec2 : Vector3 = new Vector3((0-Mathf.Sqrt(12.5)), 0, (0-Mathf.Sqrt(12.5)));
+	
+	debugVec1 = transform.TransformDirection(debugVec1);
+	debugVec2 = transform.TransformDirection(debugVec2);
+	
+	Debug.DrawRay(transform.position, debugVec1, Color.blue);
+	Debug.DrawRay(transform.position, debugVec2, Color.blue);
+	
 	for (var i = 0; i < 4; i++) {
 		pieSlice[i] = 0;
 	}
