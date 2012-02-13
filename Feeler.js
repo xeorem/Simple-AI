@@ -1,3 +1,10 @@
+/**
+ *
+ * @author Brent Bertrand
+ * @author Anthony Reyes
+ *
+ */
+ 
 
 public var viewSpectrumDegrees:int = 90;
 

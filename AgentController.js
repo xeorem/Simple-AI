@@ -1,3 +1,10 @@
+/**
+ *
+ * @author Anthony Reyes
+ * @author Brent Bertrand
+ *
+ */
+
 public var speed:float = 5;
 public var rotateSpeed:float = 5;
 

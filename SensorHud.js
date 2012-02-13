@@ -1,3 +1,10 @@
+/**
+ *
+ * @author Brent Bertrand
+ * @author Anthony Reyes
+ *
+ */
+ 
 #pragma strict
 #pragma implicit
 #pragma downcast

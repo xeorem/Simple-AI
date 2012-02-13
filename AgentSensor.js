@@ -1,4 +1,10 @@
-
+/**
+ *
+ * @author Brent Bertrand
+ * @author Anthony Reyes
+ *
+ */
+ 
 var sensorRange : float = 5;
 var maxObjects : int = 50;
 

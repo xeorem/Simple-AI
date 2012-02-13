@@ -1,3 +1,10 @@
+/**
+ *
+ * @author Anthony Reyes
+ * @author Brent Bertrand
+ *
+ */
+ 
 
 var radarRange : float = 5;
 
