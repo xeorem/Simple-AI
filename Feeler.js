@@ -17,7 +17,7 @@ public var physicalObject:GameObject;
 
 private var stepHeight:float = 0.2; // the maximumm height an object can be before being considered a wall
 
-function Start() 
+function Start()
 {
 	// find the parent (or target) object
 	if(physicalObject == null) physicalObject = this.gameObject;
@@ -52,7 +52,6 @@ function Update ()
 		var hitDetails : RaycastHit;
 		var hit = Physics.Raycast(origin, vectorDirection, hitDetails, feelerDistance);
 		if(hit && (hitDetails.collider.tag == "agent" || hitDetails.collider.tag == "Player")) hit = false;
-		else if(hit) Debug.Log(hitDetails.collider.tag);
 		
 		// draw the ray
 		var color = hit ? Color.red : Color.green;
